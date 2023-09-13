@@ -1,4 +1,8 @@
 ---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "About Me";
 
 const webIdentity = {
@@ -29,9 +33,7 @@ const goal = 3;
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
-        <a href="/about">About</a>
+        <Header />
 
         <h1>{pageTitle}</h1>
         <p>This is a simple tutorial website for learning Astro !</p>
@@ -55,7 +57,7 @@ const goal = 3;
         </ul>
         <p>My skills are:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
         {happy && <p>I am happy to be learning Astro!</p>}
 
@@ -69,4 +71,5 @@ const goal = 3;
             )
         }
     </body>
+    <Footer />
 </html>
